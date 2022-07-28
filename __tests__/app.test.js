@@ -17,15 +17,15 @@ describe('user information routes', () => {
     });
   });
 
-  it('/users:id should return a specific users details', async () => {
+  it('/users/:id should return a specific users details', async () => {
     const response = await request(app).get('/users/50');
     const tatum = {
-      id: 50,
+      id: '50',
       first_name: 'Tatum',
       last_name: 'Louca',
       email: 'tlouca1d@senate.gov',
       gender: 'Female',
-      ip_address: 40.150.247.89,
+      ip_address: '40.150.247.89'
     };
     expect(response.body).toEqual(tatum);
   });
